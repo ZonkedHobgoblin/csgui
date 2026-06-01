@@ -25,7 +25,7 @@ class CLIInterface:
         while True:
             CLIUtils.clear()
             self.menu()
-            match CLIUtils.get_sanitized_num_input(UIConstants.INPUT_PROMPT, int, 1, 4):
+            match CLIUtils.get_sanitized_num_input(UIConstants.CLI_INPUT_PROMPT, int, 1, 4):
                 case 1:
                     CLIUtils.clear()
                 case 2:

@@ -12,18 +12,18 @@ class csguiApp:
         LoggerSetup.initialize()
         I18nSetup.initialize()
         self.logger = logging.getLogger(__name__)
-        self.logger.info("Starting csgui")
+        self.logger.info("Starting CSGUI")
         
         config_manager = ConfigManager()
         # yet to implement - updater = Updater()
         
         self.ui = CLIInterface(config_manager)
-        self.logger.info("csgui initialized")
+        self.logger.info("CSGUI initialized")
     
     
     def start(self):
         self.ui.run()
-        self.logger.info("csgui stopped")
+        self.logger.info("CSGUI stopped")
 
 
 if __name__ == "__main__":
@@ -32,7 +32,7 @@ if __name__ == "__main__":
         app.start()
         
     except KeyboardInterrupt:
-        print("\nExiting csgui...")
+        print("\nExiting CSGUI...")
         sys.exit(0)
         
     except Exception:

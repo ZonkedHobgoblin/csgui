@@ -33,6 +33,7 @@ class I18nSetup:
     def initialize() -> None:
         """Get the sys lang and load relevant locale file, otherwise default to English."""
         logger = logging.getLogger(__name__)
+        user_lang = 'en'
         try:
             sys_lang, _enc = locale.getlocale() 
             if sys_lang:
@@ -40,7 +41,6 @@ class I18nSetup:
             logger.info(f"System language retrieved. Language: {user_lang}")
         except Exception:
             logger.warning("Unable to retrieve sys language, defaulting to English")
-            pass
 
         try:
             lang = gettext.translation('csgui', localedir=locales_dir, languages=[user_lang, 'en'])
@@ -48,3 +48,4 @@ class I18nSetup:
             logger.info(".mo file found and loaded for current language.")
         except FileNotFoundError:
             logger.warning("Failed to find .mo file! Using default text.")
+            gettext.NullTranslations().install()
