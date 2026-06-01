@@ -1,0 +1,2 @@
+# typing is only required for development only to stop IDE errors. Not required to build/run CS:GUI
+typing
