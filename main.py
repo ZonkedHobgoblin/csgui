@@ -1,9 +1,9 @@
 import logging
 import sys
 import traceback
-from .utils import LoggerSetup, I18nSetup
-from .ui import CLIInterface
-from .core import ConfigManager
+from utils import LoggerSetup, I18nSetup
+from ui import CLIInterface
+from core import ConfigManager
 
 class csguiApp:
     
